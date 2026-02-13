@@ -18,3 +18,7 @@ DEBUG:root:root dir is D:\Dev\Virtual-Yellow-modpack\tools\packwiz
 DEBUG:root:packwiz binary is D:\Dev\Virtual-Yellow-modpack\tools\packwiz\bin\packwiz.exe
 DEBUG:root:root dir is D:\Dev\Virtual-Yellow-modpack\tools\packwiz
 DEBUG:root:packwiz binary is D:\Dev\Virtual-Yellow-modpack\tools\packwiz\bin\packwiz.exe
+DEBUG:root:root dir is D:\Dev\Virtual-Yellow-modpack\tools\packwiz
+DEBUG:root:packwiz binary is D:\Dev\Virtual-Yellow-modpack\tools\packwiz\bin\packwiz.exe
+DEBUG:root:root dir is D:\Dev\Virtual-Yellow-modpack\tools\packwiz
+DEBUG:root:packwiz binary is D:\Dev\Virtual-Yellow-modpack\tools\packwiz\bin\packwiz.exe
