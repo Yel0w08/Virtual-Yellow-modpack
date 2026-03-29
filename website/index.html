@@ -1,6 +1,237 @@
-<h1 id="v-yellow">V-Yellow</h1>
-<p><strong>Virtual-Yellow</strong> is a vanilla-like modpack focused on <strong>performance</strong> and enhancing the overall gameplay experience. It includes built-in voice chat and optional shaders. You can join vanilla servers without any issues :D It also supports controllers.</p>
-<p>This modpack goal is to have good performance with vanilla-like feature that make the game better, you can join vanilla servers with the modpack, you also have controler support.
-this modpack is desined to make the best experiences for the players,
-Contact me at <code>PikminTea@proton.me</code> or <code>contact@yel0w.fr</code></p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eJiTyRwaUWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V-Yellow | Minecraft Modpack</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1018;
+      --surface: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #f7f7fb;
+      --muted: #9ca6b8;
+      --accent: #ffcb05;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(255,203,5,0.12), transparent 30%), #0b1018;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 32px;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.18);
+      backdrop-filter: blur(18px);
+      display: grid;
+      gap: 1.5rem;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,203,5,0.14), transparent 40%);
+      pointer-events: none;
+    }
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .hero-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      letter-spacing: -0.05em;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255,203,5,0.18);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 40rem;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(255, 203, 5, 0.14);
+    }
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.16);
+    }
+    .section-group {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.1rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+    .badge::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+    .video-card {
+      padding: 1rem;
+      border-radius: 24px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .video-card h2 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+    }
+    .details-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .details-row p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 18px;
+      display: block;
+    }
+    footer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 0.15rem 0.35rem;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="hero-card">
+      <div class="eyebrow">Minecraft modpack</div>
+      <div class="hero-heading">
+        <h1 id="v-yellow">V-Yellow</h1>
+        <span class="pill">Performance</span>
+      </div>
+      <p class="hero-copy"><strong>Virtual-Yellow</strong> is a premium Minecraft modpack built for stability, compatibility, and modern gameplay enhancements. It preserves the vanilla feel while delivering performance improvements, built-in voice chat, optional shaders, and controller support.</p>
+      <div class="actions">
+        <a class="button" href="https://modrinth.com/modpack/v-yellow" target="_blank" rel="noreferrer">Download on Modrinth</a>
+        <a class="button button-secondary" href="https://github.com/Yel0w08/Virtual-Yellow-modpack/wiki" target="_blank" rel="noreferrer">Read the GitHub Wiki</a>
+      </div>
+
+      <div class="section-group">
+        <div class="badges">
+          <span class="badge">Vanilla-compatible</span>
+          <span class="badge">Built-in voice chat</span>
+          <span class="badge">Shader-ready</span>
+          <span class="badge">Controller support</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <h2>Watch the trailer</h2>
+        <iframe src="https://www.youtube-nocookie.com/embed/eJiTyRwaUWY" title="V-Yellow trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div class="details-row">
+        <p><strong>Contact</strong><br>Questions or feedback? Reach out at <code>PikminTea@proton.me</code> or <code>contact@yel0w.fr</code>.</p>
+        <p><strong>Resources</strong><br>Find installation steps, changelogs, and technical notes on the official GitHub Wiki. Download the latest release directly from Modrinth.</p>
+      </div>
+    </article>
+
+    <footer>
+      <p>Official links: <a href="https://modrinth.com/modpack/v-yellow" target="_blank" rel="noreferrer">Modrinth</a> · <a href="https://github.com/Yel0w08/Virtual-Yellow-modpack/wiki" target="_blank" rel="noreferrer">GitHub Wiki</a></p>
+      <p>&copy; 2026 V-Yellow. Built for Minecraft performance and compatibility.</p>
+    </footer>
+  </main>
+</body>
+</html>
